@@ -1,0 +1,13 @@
+version: "2" # specify docker-compose version
+
+# Define the services/containers to be run
+services:
+  webserver:
+    image: nginx:alpine
+    container_name: webserver
+    restart: unless-stopped
+    tty: true
+    volumes:
+      - ./websources:/usr/share/nginx/html
+    ports:
+      - "80:80"
